@@ -8,7 +8,7 @@ const Episodes = () => {
 
     const [url, setUrl] = useState('https://rickandmortyapi.com/api/episode');
     const [episodes, setEpisodes] = useState([]);
-    const [hasMoore, setHasMoore]     = useState(false);
+    const [hasMore, setHasMore]     = useState(false);
 
     useEffect( () => {
         handleFetch();  
@@ -26,12 +26,12 @@ const Episodes = () => {
             return data;
         }) 
         .then( data => {
-            setHasMoore( data.info.next ? true : false );     
+            setHasMore( data.info.next ? true : false );     
             setUrl(data.info.next);
         })  
     }
 
-    const loadMoore = () => {
+    const loadMore = () => {
         handleFetch();
     }
 
@@ -48,8 +48,8 @@ const Episodes = () => {
             <article>
             <h2>Loading characters...</h2>
            </article> }
-           {hasMoore ? 
-                <Button loadMoore={loadMoore} text="Load Moore..."/>
+           {hasMore ? 
+                <Button loadMore={loadMore} text="Load More..."/>
             : null}
         </main>
     );

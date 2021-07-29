@@ -9,7 +9,7 @@ const Characters = () => {
 
     const [url, setUrl] = useState('https://rickandmortyapi.com/api/character');
     const [characters, setCharacters] = useState([]);
-    const [hasMoore, setHasMoore]     = useState(false);
+    const [hasMore, setHasMore]     = useState(false);
 
 
     useEffect( () => {
@@ -28,12 +28,12 @@ const Characters = () => {
             return data;
         }) 
         .then( data => {
-            setHasMoore( data.info.next ? true : false );     
+            setHasMore( data.info.next ? true : false );     
             setUrl(data.info.next);
         })  
     }
 
-    const loadMoore = () => {
+    const loadMore = () => {
         handleFetch();
     }
 
@@ -47,8 +47,8 @@ const Characters = () => {
             <article>
                 <h2>Loading characters...</h2>
             </article> }
-            {hasMoore ? 
-                <Button loadMoore={loadMoore} text="Load Moore..."/>
+            {hasMore ? 
+                <Button loadMore={loadMore} text="Load More..."/>
             : null}
         </main>
 
