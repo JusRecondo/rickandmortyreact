@@ -1,17 +1,15 @@
 import React from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import './episodeInfo.css';
 
-const EpisodeInfo = ({episode, id}) => {
-
+const EpisodeInfo = ({episode}) => {
 
     return (
     
-        <li id={id} className="episode-info">
+        <li className="episode-info">
             {episode.episode} 
             <ul>
-                <li id={uuidv4()}>"{episode.name}"</li>
-                <li id={uuidv4()}>{episode.air_date}</li>
+                <li>"{episode.name}"</li>
+                <li>{episode.air_date}</li>
             </ul>
         </li>
 

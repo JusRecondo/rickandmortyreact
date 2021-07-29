@@ -41,7 +41,7 @@ const Characters = () => {
         <main className="main-container characters">
             {characters ?
                 characters.map( (character) =>
-                    <Character character={character} id={uuidv4()}/>
+                    <Character character={character} key={uuidv4()}/>
                 ) 
             : 
             <article>

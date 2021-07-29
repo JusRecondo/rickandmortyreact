@@ -41,7 +41,7 @@ const Episodes = () => {
             {episodes ?
             <ul className="episodes-list">
                 {episodes.map( (episode) =>
-                    <EpisodeInfo episode={episode} id={uuidv4()}/>
+                    <EpisodeInfo episode={episode} key={uuidv4()}/>
                 )}
             </ul>
             :  

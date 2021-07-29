@@ -2,9 +2,9 @@ import React from 'react';
 import './button.css';
 
 
-const Button = ({loadMoore, text}) => {
+const Button = ({loadMore, text}) => {
     return (
-        <button onClick={loadMoore}>{text}</button>
+        <button onClick={loadMore}>{text}</button>
     );
 }
 
