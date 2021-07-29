@@ -1,0 +1,14 @@
+.character-info {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    color: #42b4ca;
+    border-radius: 3px;
+}
+
+.character-info.show {
+    opacity: 1;
+}
+

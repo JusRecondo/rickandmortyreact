@@ -1,0 +1,17 @@
+section.character-item {
+    margin: 8px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+section.character-item:hover {
+    box-shadow: 0px 0px 10px #ffffff;
+    cursor: pointer;
+}
+
+h2.character-name {
+    padding: 8px;
+}
