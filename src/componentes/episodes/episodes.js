@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Button from '../button/button';
 import EpisodeInfo from '../episodeInfo/episodeInfo';
+import { v4 as uuidv4 } from 'uuid';
 import './episodes.css';
 
 const Episodes = () => {
@@ -10,7 +11,8 @@ const Episodes = () => {
     const [hasMoore, setHasMoore]     = useState(false);
 
     useEffect( () => {
-        handleFetch();        
+        handleFetch();  
+        //eslint-disable-next-line react-hooks/exhaustive-deps      
         }, []
     );
 
@@ -38,8 +40,8 @@ const Episodes = () => {
             <h1>Episodes</h1>
             {episodes ?
             <ul className="episodes-list">
-                {episodes.map( (episode, index) =>
-                    <EpisodeInfo index={index} episode={episode}/>
+                {episodes.map( (episode) =>
+                    <EpisodeInfo episode={episode} id={uuidv4()}/>
                 )}
             </ul>
             :  

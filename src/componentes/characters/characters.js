@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Button from '../button/button';
 import Character from '../character/character';
+import { v4 as uuidv4 } from 'uuid';
 
 import './characters.css';
 
@@ -13,6 +14,7 @@ const Characters = () => {
 
     useEffect( () => {
         handleFetch();        
+        //eslint-disable-next-line react-hooks/exhaustive-deps
         }, []
     );
 
@@ -38,8 +40,8 @@ const Characters = () => {
     return (
         <main className="main-container characters">
             {characters ?
-                characters.map( (character, index) =>
-                    <Character index={index} character={character}/>
+                characters.map( (character) =>
+                    <Character character={character} id={uuidv4()}/>
                 ) 
             : 
             <article>
